@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Mobile App</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+    <string name="phone">Phone</string>
+    <string name="_91">+91</string>
+    <string name="password">Password</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="you_can_also_sign_in_with">YOU CAN ALSO SIGN IN WITH</string>
+    <string name="this_is_dummy">This is dummy</string>
+</resources>
