@@ -28,4 +28,15 @@
         android:name="com.datn.mobileapp.ui.profile.FragmentProfile"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.datn.mobileapp.ui.login.LoginFragment"
+        android:label="@string/sign_in"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_home"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

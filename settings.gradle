@@ -1,2 +1,3 @@
+include ':LoadingDialog'
 include ':app'
 rootProject.name = "Mobile App"
