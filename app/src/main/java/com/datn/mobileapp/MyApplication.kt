@@ -2,6 +2,7 @@ package com.datn.mobileapp
 
 import android.app.Application
 import com.datn.mobileapp.di.repositoryModule
+import com.datn.mobileapp.di.serviceModule
 import com.datn.mobileapp.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -12,7 +13,7 @@ class MyApplication : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@MyApplication)
-            modules(viewModelModule, repositoryModule)
+            modules(viewModelModule, repositoryModule, serviceModule)
             printLogger(Level.DEBUG)
         }
     }

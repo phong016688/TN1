@@ -9,35 +9,28 @@ import com.datn.mobileapp.R
 import com.datn.mobileapp.databinding.ActivityMainBinding
 import com.datn.mobileapp.utils.viewBindings
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.phong.lib.LoadingDialog
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private val viewBinding by viewBindings(ActivityMainBinding::bind)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        changeLanguage(Locale.US)
         val navView: BottomNavigationView = viewBinding.navView
-
         fragment_container.post {
             val navController = Navigation.findNavController(this, R.id.fragment_container)
             navView.setupWithNavController(navController)
         }
-        viewBinding.abc.setOnClickListener {
-            Log.d("#####", "abc abc")
-        }
-        viewBinding.loadingButton.setOnClickListener {
-            Log.d("###", "sadasd")
-        }
     }
 
-    override fun onResume() {
-        super.onResume()
-        LoadingDialog().apply {
-            show(supportFragmentManager, LoadingDialog.TAG)
-            viewBinding.container.postDelayed(Runnable {
-                this.dismiss()
-            }, 2000)
-        }
+    @Suppress("DEPRECATION")
+    private fun changeLanguage(locale: Locale) {
+        if (resources.configuration.locale.displayLanguage == locale.displayLanguage) return
+        val configuration = resources.configuration
+        configuration.setLocale(locale)
+        resources.updateConfiguration(configuration, resources.displayMetrics)
+        recreate()
     }
 }
