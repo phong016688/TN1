@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         viewBinding.abc.setOnClickListener {
             Log.d("#####", "abc abc")
         }
+        viewBinding.loadingButton.setOnClickListener {
+            Log.d("###", "sadasd")
+        }
     }
 
     override fun onResume() {
