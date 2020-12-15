@@ -58,12 +58,10 @@ class LoadingButton(context: Context, attributes: AttributeSet?) :
 
         centerX = x.toInt() + width / 2
 
-        Log.d("#######", width.toString())
         animWidth = ValueAnimator.ofInt(0, width).apply {
             duration = 3000L
             interpolator = interpolatorAnim
             addUpdateListener {
-                Log.d("#######", it.animatedValue.toString())
                 val value = width - (it.animatedValue as? Int ?: width)
                 if (value <= loadingView.width + 50) {
                     loadingView.visibility = View.VISIBLE

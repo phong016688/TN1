@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -19,14 +18,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
-    <com.phong.lib.button.ButtonCollapsing
-        android:id="@+id/abc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_notifications_black_24dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -40,11 +31,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/app_navigation" />
 
-    <com.phong.lib.button.LoadingButton
+    <Button
         android:id="@+id/loadingButton"
         android:layout_width="match_parent"
-        android:layout_margin="50dp"
         android:layout_height="wrap_content"
+        android:layout_margin="50dp"
         android:background="@android:color/holo_green_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

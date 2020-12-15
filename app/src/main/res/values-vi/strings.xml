@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mobile App</string>
+    <string name="title_home">Trang chủ</string>
+    <string name="title_dashboard">Bảng điều khiển</string>
+    <string name="title_notifications">Thông báo</string>
+    <string name="title_profile">Thông tin người dùng</string>
+    <string name="phone">Số điện thoại</string>
+    <string name="_91">+91</string>
+    <string name="password">Mật khẩu</string>
+    <string name="sign_in">ĐĂNG NHẬP</string>
+    <string name="sign_up">ĐĂNG KÍ</string>
+    <string name="you_can_also_sign_in_with">BẠN CÓ THỂ ĐĂNG NHẬP BẰNG</string>
+    <string name="this_is_dummy">Đây là hình ảnh</string>
+    <string name="email">Email</string>
+</resources>
