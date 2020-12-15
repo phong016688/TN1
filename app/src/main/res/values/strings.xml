@@ -12,4 +12,12 @@
     <string name="you_can_also_sign_in_with">YOU CAN ALSO SIGN IN WITH</string>
     <string name="this_is_dummy">This is dummy</string>
     <string name="email">Email</string>
+    <string name="full_name">Full Name</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="forget">Forget Password?</string>
+    <string name="sign_in_with">Sign in with</string>
+    <string name="dont_have_account">Dont have an Account?</string>
+    <string name="have_account">Have an Account?</string>
 </resources>
