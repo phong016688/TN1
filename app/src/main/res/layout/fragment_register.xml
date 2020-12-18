@@ -27,13 +27,6 @@
                 android:textSize="@dimen/sp_30"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp_40"
-                android:text="@string/full_name"
-                android:textStyle="bold" />
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/full_name_register_text_input"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -52,13 +45,6 @@
                     android:layout_marginRight="@dimen/dp_40" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp_40"
-                android:text="@string/phone"
-                android:textStyle="bold" />
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/phone_register_text_input"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -76,13 +62,6 @@
                     android:layout_marginLeft="@dimen/dp_40"
                     android:layout_marginRight="@dimen/dp_40" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp_40"
-                android:text="@string/email"
-                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/email_register_text_input"
@@ -104,13 +83,6 @@
                     android:layout_marginRight="@dimen/dp_40" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp_40"
-                android:text="@string/password"
-                android:textStyle="bold" />
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/password_register_text_input"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -130,15 +102,8 @@
                     android:layout_marginRight="@dimen/dp_40" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp_40"
-                android:text="@string/confirm_password"
-                android:textStyle="bold" />
-
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/password_register_again_text_input"
+                android:id="@+id/password_register_confirm_text_input"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,7 +114,7 @@
                 app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password_register_again_edit_text"
+                    android:id="@+id/password_register_confirm_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/dp_40"
@@ -157,7 +122,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/login_button"
+                android:id="@+id/register_button"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
