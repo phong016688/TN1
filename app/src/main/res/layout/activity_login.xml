@@ -12,4 +12,6 @@
         android:keepScreenOn="true"
         app:defaultNavHost="true"
         app:navGraph="@navigation/login_navigation" />
+
+    
 </FrameLayout>
