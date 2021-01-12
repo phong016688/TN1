@@ -14,10 +14,10 @@
         app:cardCornerRadius="@dimen/dp_40">
 
         <LinearLayout
-            android:paddingVertical="@dimen/dp_20"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/dp_20">
 
             <TextView
                 android:layout_width="match_parent"
@@ -93,13 +93,13 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/login_button"
-                android:paddingVertical="@dimen/dp_10"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/dp_50"
                 android:layout_weight="1"
                 android:elevation="@dimen/dp_10"
+                android:paddingVertical="@dimen/dp_10"
                 android:text="@string/sign_in"
                 app:cornerRadius="@dimen/dp_40" />
         </LinearLayout>
@@ -114,30 +114,29 @@
         android:textStyle="bold" />
 
     <LinearLayout
+        android:padding="@dimen/dp_10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_5"
         android:gravity="center"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/face_book_image_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_5"
-            android:layout_marginEnd="@dimen/dp_10"
-            android:background="@null"
-            android:src="@drawable/facebook"
-            tools:ignore="ContentDescription" />
+        android:orientation="vertical"
+        android:weightSum="2">
 
         <ImageButton
             android:id="@+id/email_image_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_10"
+            android:layout_weight="1"
             android:background="@null"
             android:src="@drawable/gmail"
             tools:ignore="ContentDescription" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/face_book_image_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout

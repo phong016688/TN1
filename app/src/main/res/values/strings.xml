@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="facebook_app_id">2810068725947955</string>
+    <string name="fb_login_protocol_scheme">fb2810068725947955</string>
+
     <string name="app_name">Mobile App</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -21,4 +24,5 @@
     <string name="sign_in_with">Sign in with</string>
     <string name="dont_have_account">Dont have an Account?</string>
     <string name="have_account">Have an Account?</string>
+    <string name="logout">Logout</string>
 </resources>
