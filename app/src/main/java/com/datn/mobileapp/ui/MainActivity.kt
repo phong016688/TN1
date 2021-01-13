@@ -1,15 +1,13 @@
 package com.datn.mobileapp.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.datn.mobileapp.R
 import com.datn.mobileapp.databinding.ActivityMainBinding
 import com.datn.mobileapp.utils.viewBindings
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -18,11 +16,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         changeLanguage(Locale.US)
+        val navHost = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         val navView: BottomNavigationView = viewBinding.navView
-        fragment_container.post {
-            val navController = Navigation.findNavController(this, R.id.fragment_container)
-            navView.setupWithNavController(navController)
-        }
+        val navController = navHost.navController
+        navView.setupWithNavController(navController)
     }
 
     @Suppress("DEPRECATION")
