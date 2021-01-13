@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:theme="@style/Theme.MaterialComponents.Light"
+    app:cardElevation="@dimen/dp_5"
+    app:cardMaxElevation="@dimen/dp_8"
+    app:strokeWidth="@dimen/dp_2">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        tools:ignore="ContentDescription" />
+</com.google.android.material.card.MaterialCardView>

@@ -75,4 +75,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.facebook.android:facebook-login:[8.1)'
     implementation 'com.facebook.android:facebook-android-sdk:6.5.1'
+
+    //coil
+    implementation 'io.coil-kt:coil:1.1.1'
+
+    //arc view
+    implementation 'com.github.florent37:arclayout:1.0.3'
 }
