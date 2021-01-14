@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+
+    <item
+        android:right="1500dp"
+        android:bottom="500dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#1B8F8787" />
+            <corners
+                android:bottomRightRadius="200dp"
+                android:topRightRadius="200dp" />
+        </shape>
+    </item>
+
+    <item
+        android:right="150dp"
+        android:bottom="510dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#F0000000" />
+            <corners
+                android:bottomRightRadius="200dp"
+                android:topRightRadius="200dp" />
+        </shape>
+    </item>
+
+    <item
+        android:left="200dp"
+        android:bottom="500dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#1B8F8787" />
+            <corners
+                android:bottomLeftRadius="200dp"
+                android:topLeftRadius="200dp" />
+        </shape>
+    </item>
+
+    <item
+        android:left="200dp"
+        android:bottom="510dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#D8150707" />
+            <corners
+                android:bottomLeftRadius="200dp"
+                android:topLeftRadius="200dp" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="400dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#1B8F8787" />
+            <corners
+                android:bottomLeftRadius="180dp"
+                android:bottomRightRadius="180dp" />
+        </shape>
+    </item>
+
+    <item android:bottom="410dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#80000C39" />
+            <corners
+                android:bottomLeftRadius="180dp"
+                android:bottomRightRadius="180dp" />
+        </shape>
+    </item>
+
+</layer-list>

@@ -6,5 +6,6 @@ data class User(
     val mPhone: String,
     val mEmail: String,
     val mPass: String,
-    val confirmPass: String
+    val confirmPass: String,
+    val avatar: String
 )

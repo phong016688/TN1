@@ -5,8 +5,10 @@ import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
+import android.widget.ImageView
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.datn.mobileapp.R
-import com.datn.mobileapp.utils.AppUtils
 import com.google.android.material.card.MaterialCardView
 
 class CircleImageView(context: Context, attrRes: AttributeSet?) : FrameLayout(context, attrRes) {
@@ -28,5 +30,14 @@ class CircleImageView(context: Context, attrRes: AttributeSet?) : FrameLayout(co
         cardView.layoutParams = layoutParams
         cardView.radius = widthMeasureSpec / 2f
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+    }
+
+    fun loadUrl(url: String) {
+        if (url.isEmpty()) return
+        cardView.findViewById<ImageView>(R.id.image_view).load(url) {
+            crossfade(true)
+            placeholder(R.drawable.waiting)
+            transformations(CircleCropTransformation())
+        }
     }
 }
