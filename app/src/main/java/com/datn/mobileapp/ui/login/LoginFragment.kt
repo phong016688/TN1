@@ -90,9 +90,18 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         viewBinding.signUpTextView.setOnClickListener {
             val fragmentTransaction: FragmentTransaction = fragmentManager!!.beginTransaction()
             fragmentTransaction.replace(R.id.fragment_container, RegisterFragment.newInstance())
-                .addSharedElement(viewBinding.titleTextView, viewBinding.titleTextView.transitionName)
-                .addSharedElement(viewBinding.emailTextInput, viewBinding.emailTextInput.transitionName)
-                .addSharedElement(viewBinding.passwordTextInput, viewBinding.passwordTextInput.transitionName)
+                .addSharedElement(
+                    viewBinding.titleTextView,
+                    viewBinding.titleTextView.transitionName
+                )
+                .addSharedElement(
+                    viewBinding.emailTextInput,
+                    viewBinding.emailTextInput.transitionName
+                )
+                .addSharedElement(
+                    viewBinding.passwordTextInput,
+                    viewBinding.passwordTextInput.transitionName
+                )
                 .addSharedElement(viewBinding.loginButton, viewBinding.loginButton.transitionName)
             fragmentTransaction.commit()
         }
@@ -169,11 +178,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)!!
-                Log.d("ABB", "firebaseAuthWithGoogle:" + account.id)
+                Log.d(this::class.java.simpleName, "firebaseAuthWithGoogle:" + account.id)
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
-                Log.w("ABB", "Google sign in failed", e)
+                Log.w(this::class.java.simpleName, "Google sign in failed", e)
                 // ...
             }
         }
