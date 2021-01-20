@@ -10,7 +10,11 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
         super.onActivityResult(requestCode, resultCode, data)
         val navFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
         navFragment!!.childFragmentManager.fragments.forEach {
-            it.onActivityResult(requestCode, resultCode, data)
+            it.onActivityResult(
+                requestCode,
+                resultCode,
+                data
+            )
         }
     }
 }

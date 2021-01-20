@@ -25,4 +25,7 @@
     <string name="dont_have_account">Dont have an Account?</string>
     <string name="have_account">Have an Account?</string>
     <string name="logout">Logout</string>
+    <string name="save">Save</string>
+    <string name="logo">logo</string>
+    <string name="transition_button">transition button</string>
 </resources>

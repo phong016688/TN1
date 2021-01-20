@@ -4,11 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import androidx.transition.TransitionInflater
 import com.datn.mobileapp.R
 import com.datn.mobileapp.databinding.FragmentLoginBinding
 import com.datn.mobileapp.ui.MainActivity
+import com.datn.mobileapp.ui.register.RegisterFragment
 import com.datn.mobileapp.utils.viewBindings
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
@@ -61,7 +65,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 override fun onSuccess(result: LoginResult?) {
                     handleFacebookAccessToken(result!!.accessToken)
                     Log.d("AAAAAAAAAAAA", user?.displayName + "__" + user?.email + "__" + user?.uid)
-                    updateUI()
+                    //    updateUI()
                 }
 
                 override fun onCancel() {
@@ -74,8 +78,24 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             })
     }
 
-    private fun onclick() : Fragment{
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition =
+            TransitionInflater.from(requireContext()).inflateTransition(R.transition.shared_image)
+        sharedElementReturnTransition =
+            TransitionInflater.from(requireContext()).inflateTransition(R.transition.shared_image)
+    }
 
+    private fun onclick() = viewBinding.apply {
+        viewBinding.signUpTextView.setOnClickListener {
+            val fragmentTransaction: FragmentTransaction = fragmentManager!!.beginTransaction()
+            fragmentTransaction.replace(R.id.fragment_container, RegisterFragment.newInstance())
+                .addSharedElement(viewBinding.titleTextView, viewBinding.titleTextView.transitionName)
+                .addSharedElement(viewBinding.emailTextInput, viewBinding.emailTextInput.transitionName)
+                .addSharedElement(viewBinding.passwordTextInput, viewBinding.passwordTextInput.transitionName)
+                .addSharedElement(viewBinding.loginButton, viewBinding.loginButton.transitionName)
+            fragmentTransaction.commit()
+        }
     }
 
     private fun signIn() {
@@ -117,7 +137,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 .addOnCompleteListener(requireActivity()) { task ->
                     if (task.isSuccessful) {
                         Log.d(this::class.java.simpleName, "successful")
-                        updateUI()
+                        //   updateUI()
                     } else {
                         Log.d(
                             this::class.java.simpleName,
@@ -173,5 +193,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     companion object {
         const val EMAIL = "email"
         const val RC_SIGN_IN = 2
+        fun newInstance() = LoginFragment()
     }
 }

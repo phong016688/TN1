@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.gms.google-services'
 
@@ -56,16 +55,21 @@ dependencies {
     implementation "org.koin:koin-androidx-ext:2.2.0-rc-3"
     implementation project(path: ':LoadingDialog')
 
+    // firebase
     implementation platform('com.google.firebase:firebase-bom:26.1.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.facebook.android:facebook-login:6.5.1'
+    implementation 'com.facebook.android:facebook-android-sdk:6.5.1'
+    implementation 'com.google.firebase:firebase-firestore'
 
     //gson
     implementation 'com.google.code.gson:gson:2.8.6'
 
     //rx
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.6'
     implementation 'io.reactivex.rxjava3:rxkotlin:3.0.1'
 
     //login
@@ -78,7 +82,4 @@ dependencies {
 
     //coil
     implementation 'io.coil-kt:coil:1.1.1'
-
-    //arc view
-    implementation 'com.github.florent37:arclayout:1.0.3'
 }
