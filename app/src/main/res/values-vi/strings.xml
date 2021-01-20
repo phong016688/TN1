@@ -26,4 +26,6 @@
     <string name="have_account">Have an Account?</string>
     <string name="logout">Logout</string>
     <string name="save">Save</string>
+    <string name="logo">Tiêu Đề</string>
+    <string name="transition_button">transiton button</string>
 </resources>

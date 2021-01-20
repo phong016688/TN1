@@ -1,16 +1,22 @@
 package com.datn.mobileapp.ui.register
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import androidx.transition.TransitionInflater
 import com.datn.mobileapp.R
 import com.datn.mobileapp.databinding.FragmentRegisterBinding
 import com.datn.mobileapp.helpers.ValidatorHelper
+import com.datn.mobileapp.ui.login.LoginFragment
 import com.datn.mobileapp.utils.viewBindings
 
+@Suppress("DEPRECATION")
 class RegisterFragment : Fragment(R.layout.fragment_register) {
     private val viewBinding by viewBindings(FragmentRegisterBinding::bind)
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewBinding.registerButton.setOnClickListener {
@@ -19,6 +25,40 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
             validatePassWord()
             validatePhone()
         }
+        clickSignIn()
+    }
+
+    private fun clickSignIn() {
+        viewBinding.signInTextView.setOnClickListener {
+            val fragmentTransaction: FragmentTransaction =
+                requireFragmentManager().beginTransaction()
+            fragmentTransaction.replace(R.id.fragment_container, LoginFragment.newInstance())
+                .addSharedElement(
+                    viewBinding.titleRegisterTextView,
+                    viewBinding.titleRegisterTextView.transitionName
+                )
+                .addSharedElement(
+                    viewBinding.emailRegisterTextInput,
+                    viewBinding.emailRegisterTextInput.transitionName
+                )
+                .addSharedElement(
+                    viewBinding.passwordRegisterTextInput,
+                    viewBinding.passwordRegisterTextInput.transitionName
+                )
+                .addSharedElement(
+                    viewBinding.registerButton,
+                    viewBinding.registerButton.transitionName
+                )
+            fragmentTransaction.commit()
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition =
+            TransitionInflater.from(requireContext()).inflateTransition(R.transition.shared_image)
+        sharedElementReturnTransition =
+            TransitionInflater.from(requireContext()).inflateTransition(R.transition.shared_image)
     }
 
     private fun validatePhone() = viewBinding.apply {
@@ -69,5 +109,9 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
         } else {
             emailRegisterTextInput.error = null
         }
+    }
+
+    companion object {
+        fun newInstance() = RegisterFragment()
     }
 }
