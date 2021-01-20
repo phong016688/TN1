@@ -105,32 +105,20 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/dp_50"
-        android:text="@string/sign_in_with"
-        android:textStyle="bold" />
-
     <LinearLayout
-        android:padding="@dimen/dp_10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_5"
         android:gravity="center"
         android:orientation="vertical"
+        android:padding="@dimen/dp_10"
         android:weightSum="2">
 
-        <ImageButton
-            android:id="@+id/email_image_button"
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/gmail_image_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_10"
-            android:layout_weight="1"
-            android:background="@null"
-            android:src="@drawable/gmail"
-            tools:ignore="ContentDescription" />
+            android:layout_margin="@dimen/dp_10" />
 
         <com.facebook.login.widget.LoginButton
             android:id="@+id/face_book_image_button"
@@ -151,6 +139,7 @@
             android:text="@string/dont_have_account" />
 
         <TextView
+            android:id="@+id/sign_up_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_5"
